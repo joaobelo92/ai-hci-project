@@ -212,7 +212,7 @@ class KEYBOARD():
                 details['char'] = key_1
 
 
-    def evaluate(self, sentence, render=False, render_duration=5):
+    def evaluate(self, sentence=None, render=False, render_duration=5):
         """
         Evaluates the performance of the keyboard by typing a given sentence 
         and calculating completion time and error rate.
@@ -226,6 +226,8 @@ class KEYBOARD():
         Returns:
             tuple: A tuple containing the completion time (s) and error rate.
         """
+        if sentence is None:
+            sentence=get_target_sentence_wonderwords()
         self.type_sentence(sentence)
         comp_time = np.sum(self.movement_time_history)/len(sentence) / 1000
         error_rate = 1 - np.sum(self.success_history)/len(sentence)
@@ -392,7 +394,7 @@ class KEYBOARD():
         return keyboard
 
 
-def get_target_sentence_wonderwords(char_limit):
+def get_target_sentence_wonderwords(char_limit=500):
     """""""""
     Generate a sentence with a random number of characters.
     :param char_limit: The maximum number of characters in the sentence.
