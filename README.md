@@ -18,3 +18,12 @@ still run into issues that you cannot solve by yourself reach out to us.
 > conda env create -f environment.yml  
 > conda activate opt  
 > jupyter lab
+
+
+To install all the packages manually (e.g., for Windows):
+> cd this_directory 
+> conda create -n opt
+> conda install -c conda-forge jupyterlab
+> pip install numpy trimesh ipyvolume  
+> pip install pygame imageio[ffmpeg] wonderwords
+> pip install ipython_genutils
