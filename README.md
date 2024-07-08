@@ -14,7 +14,7 @@ materials. The environment.yml was exported and tested on macOS - if you run
 into environment creation issues try to install the packages manually. If you
 still run into issues that you cannot solve by yourself reach out to us.
 > cd this_directory  
-> git pull --recurse-submodules
+> git pull --recurse-submodules  
 > conda env create -f environment.yml  
 > conda activate opt  
 > jupyter lab
@@ -22,8 +22,8 @@ still run into issues that you cannot solve by yourself reach out to us.
 
 To install all the packages manually (e.g., for Windows):
 > cd this_directory 
-> conda create -n opt
-> conda install -c conda-forge jupyterlab
+> conda create -n opt  
+> conda install -c conda-forge jupyterlab  
 > pip install numpy trimesh ipyvolume  
-> pip install pygame imageio[ffmpeg] wonderwords
+> pip install pygame imageio[ffmpeg] wonderwords  
 > pip install ipython_genutils
