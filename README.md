@@ -21,7 +21,7 @@ still run into issues that you cannot solve by yourself reach out to us.
 
 
 To install all the packages manually (e.g., for Windows):
-> cd this_directory 
+> cd this_directory  
 > conda create -n opt  
 > conda install -c conda-forge jupyterlab  
 > pip install numpy trimesh ipyvolume  
