@@ -145,11 +145,15 @@ class KEYBOARD():
                    position (numpy.ndarray) after typing.
         """
         ## Fitts' law from https://www.yorku.ca/mack/p219-mackenzie.pdf
+        # Find key position
+        for k, v in self.keyboard_details.items():
+            if v['char'] == target_key:
+                target_key_index = k
         target_pos = np.array([
-            self.keyboard_details[target_key]['x'] +
-            1/2 * self.keyboard_details[target_key]['width'],
-            self.keyboard_details[target_key]['y'] +
-            1/2 * self.keyboard_details[target_key]['height']
+            self.keyboard_details[target_key_index]['x'] +
+            1/2 * self.keyboard_details[target_key_index]['width'],
+            self.keyboard_details[target_key_index]['y'] +
+            1/2 * self.keyboard_details[target_key_index]['height']
             ])
         dist = np.linalg.norm(target_pos - self.current_pos)
         fitts_id = np.log2(dist/self.fitts_w + 1)
